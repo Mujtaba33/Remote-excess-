@@ -1,0 +1,26 @@
+def test_auto_gui(self):
+        if self.cmd_switch:
+            # Drag mouse to control some object on screen (such as google map at webpage)
+            distance = 100.
+            while distance > 0:
+                pyautogui.dragRel(distance, 0, duration=2, button='left')    # move right
+                distance -= 25
+                pyautogui.dragRel(0, distance, duration=2, button='left')    # move down
+                distance -= 25
+                pyautogui.dragRel(-distance, 0, duration=2, button='left')    # move right
+                distance -= 25
+                pyautogui.dragRel(0, -distance, duration=2, button='left')    # move down
+                distance -= 25
+
+            # scroll mouse wheel (zoom in and zoom out google map)
+            pyautogui.scroll(10, pause=1.)
+            pyautogui.scroll(-10, pause=1)
+
+            pyautogui.scroll(10, pause=1.)
+            pyautogui.scroll(-10, pause=1)
+
+            # message box
+            pyautogui.alert(text='pyautogui testing over, click ok to end', title='Alert', button='OK')
+            self.cmd_switch = not self.cmd_switch   # turn off
+
+# main function of the project (run all processes) 
