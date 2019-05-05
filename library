@@ -1,0 +1,5 @@
+#project libraries
+there are few libraries that will be used in project 
+Keyboard library(pyautogui)(key,controller)
+mouse library(pyautogui)
+socket programing(socket-library)
